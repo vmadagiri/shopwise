@@ -1,88 +1,113 @@
-# 🛍️ Customer Shopping Analytics | A Real-Data Dashboard
+# 🛍️ Customer Shopping Analytics
 
-### 💗 [Explore My Live Interactive Dashboard!](https://online-retail-analytics.vaishnavimadagiri.chatgpt.site/)
+### Real shopping data, pretty charts and a little curiosity 💗
 
-**Python • Pandas • Plotly • Streamlit • Data Visualization**
+**Python • Pandas • Plotly • Streamlit • Data Analytics**
 
-*Built by Vaishnavi Madagiri | MS Data Science @ Virginia Tech*
+*Made by Vaishnavi Madagiri | MS Data Science @ Virginia Tech*
+
+### 🌷 [✨ Explore My Live Dashboard ✨](https://online-retail-analytics.vaishnavimadagiri.chatgpt.site/)
 
 ---
 
-## 💌 Why I Built This
+## 💌 The Idea Behind This Project
 
-I've always liked finding patterns in data, but I also love making things visually engaging and easy for people to use.
+I love finding patterns in data, but I also love making things look good and easy to understand.
 
-For this project, I wanted to take real shopping data and turn it into something that tells a story.
+For this project, I wanted to take real shopping data and figure out what it could tell me about how people shop.
 
-Instead of just creating a few graphs, I built an interactive dashboard where anyone can explore what customers are buying, how sales change and what brings customers back.
+What are customers buying? When are sales the highest? Do people come back after their first purchase?
 
-## 🎯 The Purpose
+I didn't want to just analyze the numbers and call it a day. I wanted to make something interactive where anyone could explore the data themselves.
 
-My goal was to better understand customer shopping behavior and explore how a business could use that information to make decisions.
+So I built a customer analytics dashboard!
 
-Some questions I wanted to answer:
+## 🎯 The Goal
 
-- Which products are customers buying the most?
-- When do sales increase or decrease?
-- Which countries generate the most sales?
-- How often do customers come back?
-- What can customer shopping patterns tell us?
+The goal was pretty simple: **turn real retail transactions into useful insights that could help a business understand its customers.**
 
-## 📊 Explore the Dashboard
+I focused on five questions:
 
-The project includes four main sections:
+- 🛍️ What products are people buying?
+- 📈 When do sales increase or decrease?
+- 🌍 Where are customers shopping from?
+- 💗 How many customers come back?
+- ✨ What can different shopping patterns tell us?
 
-| Section | What You Can Explore |
+I also wanted the dashboard to be beginner-friendly. You shouldn't need to know Python or data science to understand what you're looking at.
+
+---
+
+## 🌸 A Look at the Dashboard
+
+These are screenshots from my live dashboard, built using real UCI Online Retail data.
+
+### 💜 How Sales Changed Over Time
+
+I wanted to see how sales and the number of orders changed throughout the year.
+
+![Sales by Month](real_data_dashboard/screenshots/sales_by_month.png)
+
+November 2011 stood out as the strongest month for sales in the cleaned dataset.
+
+One thing worth mentioning is that December 2011 only includes the first nine days, so its drop doesn't necessarily mean customers suddenly stopped shopping.
+
+### 🌍 Where Customers Are Shopping
+
+I also looked at which countries generated the most sales.
+
+![Sales by Country](real_data_dashboard/screenshots/sales_by_country.png)
+
+The United Kingdom made up most of the revenue, which makes sense given that the retailer was based there.
+
+But I also thought it was interesting to explore how other countries compared.
+
+### 🎀 Explore It Yourself!
+
+The best part is that you don't have to rely on these screenshots.
+
+The live dashboard lets you explore dates, countries, products and customer patterns through interactive charts and filters.
+
+**[💗 Open My Live Interactive Dashboard](https://online-retail-analytics.vaishnavimadagiri.chatgpt.site/)**
+
+---
+
+## 📊 What I Found
+
+Here are a few highlights from my cleaned retail dataset:
+
+| What I Looked At | What I Found |
 |---|---|
-| 🛍️ Sales Overview | Revenue, orders and sales trends |
-| 💗 Customer Insights | Shopping habits and customer groups |
-| 🌍 Products & Countries | Best-selling items and geographic trends |
-| 📈 Customer Retention | How often customers return |
+| 💰 Total sales | £8.74 million |
+| 🧾 Unique orders | 18,402 |
+| 👥 Identified customers | 4,334 |
+| 💗 Repeat customers | 65.3% placed more than one order |
+| 📈 Highest-sales month | November 2011 |
+| 🌍 Biggest market | United Kingdom |
+| 🛍️ Products analyzed | 3,659 unique stock codes |
 
-You can filter by date, country and product, so you're not just looking at static graphs.
+These numbers came from the cleaned data, not the raw spreadsheet.
 
-### ✨ [Open the Live Dashboard](https://online-retail-analytics.vaishnavimadagiri.chatgpt.site/)
+Something I learned pretty quickly was that the way you clean your data really matters. Including canceled orders, duplicate entries or invalid transactions could change the results.
+
+You can read more in my [analysis and findings](real_data_dashboard/FINDINGS.md).
+
+---
 
 ## 🛠️ How I Built It
 
-I started with a real retail dataset and used Python and Pandas to prepare it for analysis.
+I started with a real retail dataset from the UCI Machine Learning Repository.
 
-The process included checking for missing values, duplicates, canceled orders and invalid transactions.
+Since the data wasn't perfectly ready to analyze, I used Python and Pandas to clean it.
 
-After cleaning the data, I used Plotly for interactive visualizations and Streamlit to organize the analysis into dashboard pages.
+That meant:
 
-I also documented the cleaning decisions because I wanted the numbers to be understandable and traceable.
+- Checking for missing information
+- Finding duplicate records
+- Separating canceled orders
+- Removing invalid transactions
+- Checking that the final numbers made sense
 
-## 📁 Explore the Project
+Once the data was ready, I used Plotly to create interactive charts and Streamlit to build the Python dashboard.
 
-- 💻 [Dashboard Code](real_data_dashboard/)
-- 🧹 [Data Cleaning Process](real_data_dashboard/DATA_CLEANING.md)
-- 📊 [Analysis and Findings](real_data_dashboard/FINDINGS.md)
-- 📖 [Data Dictionary](real_data_dashboard/DATA_DICTIONARY.md)
-- 🖼️ [Project Visualizations](real_data_dashboard/screenshots/)
-
-## 📚 About the Data
-
-This project uses the **UCI Online Retail dataset**, containing real transactions from a UK-based online retailer between December 2010 and December 2011.
-
-**Source:** [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/352/online%2Bretail)
-
-**Attribution:** Chen, D. (2015). *Online Retail* [Dataset]. UCI Machine Learning Repository. [DOI: 10.24432/C5BW33](https://doi.org/10.24432/C5BW33). Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-The data doesn't include profit or marketing activity, so the analysis focuses on observed sales and shopping patterns rather than making claims about profit or why customers behaved a certain way.
-
-## 🌱 What I Learned
-
-One of my favorite parts of building this was seeing how much more useful data becomes when people can interact with it.
-
-I got to practice cleaning real-world data, writing Python for analysis and thinking about how someone without a technical background would explore the results.
-
-This project also helped me improve how I communicate insights visually, which is something I want to keep getting better at.
-
----
-
-### 💗 Built by Vaishnavi Madagiri
-
-[🌐 Live Dashboard](https://online-retail-analytics.vaishnavimadagiri.chatgpt.site/) • [💼 LinkedIn](https://www.linkedin.com/in/vaishnavi-madagiri-b0a08b265)
-
-*Earlier synthetic-data work is preserved separately as part of this project's development history.*
+I also documented
