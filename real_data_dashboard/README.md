@@ -1,61 +1,76 @@
-# UCI Online Retail Customer Analytics
+# 🛍️ Customer Shopping Analytics Dashboard
 
-A beginner-friendly, reproducible customer analytics project using the real **Online Retail** workbook from the UCI Machine Learning Repository. The existing synthetic project remains at the repository root; this is a separate subproject.
+### 🌐 [Check Out My Live Dashboard!](https://online-retail-analytics.vaishnavimadagiri.chatgpt.site/)
 
-## Data and attribution
+**Python | Pandas | Plotly | Streamlit**
 
-- Dataset: [UCI Online Retail, dataset ID 352](https://archive.ics.uci.edu/dataset/352/online%2Bretail)
-- DOI: [10.24432/C5BW33](https://doi.org/10.24432/C5BW33)
-- Creator: Daqing Chen (2015)
-- License: [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
-- Required attribution: Chen, D. (2015). *Online Retail* [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5BW33.
+## 💡 Why I Built This
 
-The original 22.6 MB Excel file is downloaded from UCI when needed and is ignored by Git. The source workbook is never edited. See [DATA_CLEANING.md](DATA_CLEANING.md) for field-level decisions and [DATA_DICTIONARY.md](DATA_DICTIONARY.md) for field definitions.
+I've always liked the idea of taking a bunch of messy data and turning it into something people can actually understand and use.
 
-## Run it
+For this project, I wanted to see what real customer shopping data could tell us about a business. Things like which products sell the most, when people shop and how often customers come back.
 
-Run these commands from the repository root after checking out the `real-data-dashboard` branch:
+Instead of just making a few graphs, I decided to build an interactive dashboard where anyone can explore the data themselves!
+
+## 🎯 The Goal
+
+My goal was to turn real retail data into useful insights that could help a business better understand its customers and sales.
+
+I wanted to answer questions like:
+
+- What are customers buying the most?
+- Which countries bring in the most sales?
+- How do sales change throughout the year?
+- How many customers come back to shop again?
+- Are there different types of customers based on their shopping habits?
+
+## 📊 What You Can Explore
+
+The dashboard has four sections:
+
+- **Sales Overview:** Total sales, orders and shopping trends over time.
+- **Customer Insights:** Shopping habits, customer groups and repeat purchases.
+- **Products & Countries:** Best-selling products and where customers are shopping from.
+- **Customer Retention:** How often customers return after their first purchase.
+
+You can also filter by date, country and product to explore different trends. Everything is interactive, so feel free to click around!
+
+## 🛠️ How I Built It
+
+I used a real online retail dataset and cleaned it using Python and Pandas. This included checking for missing information, duplicate records, canceled orders and other data issues.
+
+Once the data was ready, I used Plotly to create interactive graphs and Streamlit to bring everything together into a dashboard.
+
+I also documented my cleaning decisions so it's clear where the numbers come from.
+
+## 📁 Dataset
+
+This project uses the **UCI Online Retail dataset**, which contains real transactions from a UK-based online retailer between December 2010 and December 2011.
+
+**Source:** [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/352/online%2Bretail)
+
+**Attribution:** Chen, D. (2015). *Online Retail* [Dataset]. UCI Machine Learning Repository. [DOI: 10.24432/C5BW33](https://doi.org/10.24432/C5BW33). Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+## 💻 Want to Run It Yourself?
+
+Clone the repository and switch to the `real-data-dashboard` branch. From the repository's main folder, run:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
 python -m pip install -r real_data_dashboard/requirements.txt
 python real_data_dashboard/download_data.py
 python real_data_dashboard/data_pipeline.py
 python -m streamlit run real_data_dashboard/app.py
 ```
 
-The dashboard opens in your browser. Use the sidebar to filter invoice dates, countries, and products. The pipeline saves these local (Git-ignored) outputs under `real_data_dashboard/data/processed/`:
+The dataset is downloaded from UCI and cleaned locally.
 
-- `cleaned_transactions.csv` — rows retained for merchandise and customer analysis
-- `cancellation_audit.csv` — every source line whose invoice number begins with `C`
-- `exclusion_audit.csv` — every excluded source row with one Boolean column per reason
-- `cleaning_summary.json` — source row count, missing values, overlapping reason counts, and validations
+## 💗 A Little About This Project
 
-Re-running the download script reuses an existing workbook. To force a fresh UCI download, delete `real_data_dashboard/data/raw/Online Retail.xlsx` first and run the download command again.
+This was a fun way for me to practice working with real-world data, improve my Python skills and learn how to present information in a way that's actually useful.
 
-## Pages
+I'm especially interested in the part of data science where analysis meets the user experience, so I wanted this project to be both informative and easy to explore.
 
-1. **Overview** — GBP revenue, distinct invoices, average order value, customers, repeat purchase rate, monthly sales, and top countries.
-2. **Customer Insights** — rule-based RFM segments and customer-level details.
-3. **Products & Countries** — merchandise performance and country comparisons.
-4. **Cohort Retention** — a monthly retention heatmap.
+**Built by Vaishnavi Madagiri**  
+MS Data Science @ Virginia Tech
 
-All charts are interactive Plotly charts. KPIs are recalculated for the current date, country, and product filters. Invoice counts always use distinct `InvoiceNo` values.
-
-## Validate and test
-
-```bash
-python real_data_dashboard/data_pipeline.py
-python -m pytest -q real_data_dashboard/tests
-```
-
-The tests use a tiny hand-built fixture to check overlap-aware cleaning, immutable input, distinct-invoice KPIs, small RFM groups, and cohort calculations. The full-data run writes checks into `cleaning_summary.json`; it does not generate synthetic rows or fabricate values.
-
-## Screenshots
-
-See [`screenshots/`](screenshots/) for static dashboard-view previews rendered from the cleaned workbook and the same calculation functions. Findings are documented separately in [FINDINGS.md](FINDINGS.md); those numbers are computed from the project code and downloaded UCI workbook, not copied from an example.
-
-## Project boundaries
-
-Revenue is quantity multiplied by unit price in GBP. The dataset does not contain cost, profit, web activity, campaign exposure, or future outcomes, so this project does not calculate profit, personalization impact, causal effects, or churn probabilities. The “at risk” RFM label is a transparent descriptive rule, not a predictive model.
+🌐 **[Explore the Live Dashboard](https://online-retail-analytics.vaishnavimadagiri.chatgpt.site/)**
