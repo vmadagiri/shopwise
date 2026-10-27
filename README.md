@@ -195,5 +195,3 @@ I'm especially interested in data science, analytics and creating tools that peo
 ### Let's Connect!
 
 [🌷 Live Dashboard](https://online-retail-analytics.vaishnavimadagiri.chatgpt.site/) • [💼 LinkedIn](https://www.linkedin.com/in/vaishnavi-madagiri-b0a08b265) • [🐙 GitHub](https://github.com/vmadagiri)
-
-*Made with curiosity, coffee and lots of Python. 💕*
