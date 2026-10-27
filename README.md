@@ -110,4 +110,90 @@ That meant:
 
 Once the data was ready, I used Plotly to create interactive charts and Streamlit to build the Python dashboard.
 
-I also documented
+I also documented my cleaning decisions because I wanted anyone looking at the project to understand how I got my results.
+
+### The Tools
+
+| Tool | What I Used It For |
+|---|---|
+| 🐍 Python | Cleaning and analyzing data |
+| 🐼 Pandas | Working with retail transactions |
+| 📊 Plotly | Interactive visualizations |
+| 🖥️ Streamlit | Building the Python dashboard |
+| 💻 GitHub | Organizing and sharing my project |
+
+---
+
+## 📂 Take a Look Behind the Scenes
+
+If you're curious about the actual work, here's where you can find everything:
+
+| | |
+|---|---|
+| 💻 [Dashboard Code](real_data_dashboard/) | The Python project |
+| 🧹 [Data Cleaning](real_data_dashboard/DATA_CLEANING.md) | How I prepared the data |
+| 📊 [My Findings](real_data_dashboard/FINDINGS.md) | Results and observations |
+| 📖 [Data Dictionary](real_data_dashboard/DATA_DICTIONARY.md) | What the columns mean |
+| 🖼️ [Dashboard Screenshots](real_data_dashboard/screenshots/) | Visual previews |
+| 🧪 [Tests](real_data_dashboard/tests/) | Checks for the data workflow |
+
+### Want to Run the Python Version?
+
+From the repository folder, run:
+
+```bash
+python -m pip install -r real_data_dashboard/requirements.txt
+python real_data_dashboard/download_data.py
+python real_data_dashboard/data_pipeline.py
+python -m streamlit run real_data_dashboard/app.py
+```
+
+The code downloads the original retail dataset, cleans it locally and opens the Python dashboard.
+
+The live website linked above is a separately hosted interactive experience. The GitHub Python version contains the documented data-processing and analysis workflow.
+
+---
+
+## 📚 Where the Data Came From
+
+I used the **UCI Online Retail dataset**, which contains real transactions from a UK-based online retailer between December 2010 and December 2011.
+
+The original dataset has 541,909 rows. After applying my documented cleaning rules, the analysis retained 391,150 merchandise line items.
+
+**Source:** [UCI Online Retail Dataset](https://archive.ics.uci.edu/dataset/352/online%2Bretail)
+
+**Attribution:** Chen, D. (2015). *Online Retail* [Dataset]. UCI Machine Learning Repository. [DOI: 10.24432/C5BW33](https://doi.org/10.24432/C5BW33).
+
+**License:** [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+A quick note: the dataset records sales, not profit. Customer groups and repeat-purchase patterns describe what happened during the observed period, not what customers will necessarily do in the future.
+
+---
+
+## 🌱 What I Learned
+
+One of my favorite things about this project was realizing that data analysis isn't just about getting the right numbers.
+
+It's also about making sure someone else can understand them.
+
+I got more comfortable working with messy real-world data, building reusable Python code and thinking through how my visualizations would look to someone who had never seen the dataset before.
+
+I also learned that a good-looking dashboard still needs reliable data behind it.
+
+This project was a fun way to combine the technical side of data science with something I genuinely enjoy: making information visual, interactive and easy to explore.
+
+---
+
+## 💗 A Little About Me
+
+Hi! I'm **Vaishnavi**, a Data Science master's student at Virginia Tech with a background in Bioinformatics and Computer Science.
+
+I enjoy building projects that combine programming, problem-solving and data visualization.
+
+I'm especially interested in data science, analytics and creating tools that people can actually use.
+
+### Let's Connect!
+
+[🌷 Live Dashboard](https://online-retail-analytics.vaishnavimadagiri.chatgpt.site/) • [💼 LinkedIn](https://www.linkedin.com/in/vaishnavi-madagiri-b0a08b265) • [🐙 GitHub](https://github.com/vmadagiri)
+
+*Made with curiosity, coffee and lots of Python. 💕*
