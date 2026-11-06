@@ -14,11 +14,13 @@ CLEAN_FILE = PROJECT_DIR / "data" / "processed" / "cleaned_transactions.csv"
 def load_transactions() -> pd.DataFrame:
     """Read the generated clean file once and cache it between reruns."""
     if not CLEAN_FILE.exists():
-        raise FileNotFoundError(
-            "Cleaned data is missing. From the repository root, run "
-            "`python real_data_dashboard/download_data.py` and then "
-            "`python real_data_dashboard/data_pipeline.py`."
-        )
+    from download_data import download_workbook
+    from data_pipeline import run_pipeline
+
+    with st.spinner("Preparing the UCI dataset..."):
+        download_workbook()
+        run_pipeline()
+        
     data = pd.read_csv(CLEAN_FILE, parse_dates=["InvoiceDate"])
     data["CustomerID"] = data["CustomerID"].astype("string")
     return data
