@@ -11,9 +11,23 @@ st.set_page_config(page_title="Online Retail | Customer Analytics", page_icon="ð
 st.markdown(
     """
     <style>
-    .stApp { background: #f7f8fc; }
+    .stApp {
+    background: #f7f8fc;
+    color: #17243b;
+}
     [data-testid="stMetric"] { background: white; padding: 16px; border-radius: 12px; border: 1px solid #e8eaf2; }
     h1, h2, h3 { color: #17243b; }
+
+    [data-testid="stMetricLabel"],
+    [data-testid="stMetricValue"],
+    [data-testid="stMetricDelta"] {
+        color: #17243b !important;
+}
+
+    .stApp p,
+    .stApp label {
+        color: #17243b;
+}
     </style>
     """,
     unsafe_allow_html=True,
