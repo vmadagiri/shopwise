@@ -121,8 +121,8 @@ def load_data() -> pd.DataFrame:
     required = ["customers.csv", "products.csv", "stores.csv", "transactions.csv"]
     missing = [name for name in required if not (DATA_RAW_DIR / name).exists()]
     if missing:
-        st.error("Missing raw CSV files. Run `python src/generate_data.py` first.")
-        st.stop()
+    from src.generate_data import generate_all
+    generate_all()
 
     customers = pd.read_csv(DATA_RAW_DIR / "customers.csv", parse_dates=["signup_date"])
     products = pd.read_csv(DATA_RAW_DIR / "products.csv")
