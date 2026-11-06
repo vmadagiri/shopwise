@@ -14,8 +14,8 @@ CLEAN_FILE = PROJECT_DIR / "data" / "processed" / "cleaned_transactions.csv"
 def load_transactions() -> pd.DataFrame:
     """Read the generated clean file once and cache it between reruns."""
     if not CLEAN_FILE.exists():
-    from download_data import download_workbook
-    from data_pipeline import run_pipeline
+        from download_data import download_workbook
+        from data_pipeline import run_pipeline
 
     with st.spinner("Preparing the UCI dataset..."):
         download_workbook()
